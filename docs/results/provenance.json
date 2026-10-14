@@ -1,0 +1,59 @@
+{
+  "snapshot_date": "2026-10-14",
+  "source_kind": "saved_experiment_aggregates",
+  "pipeline": "frozen 256-D representations; primary survival PCA-32 + penalized Cox",
+  "sources": [
+    {
+      "id": "baseline",
+      "artifact": "authoritative_v6.json",
+      "sha256": "95126df0d23c8792722290c10c0e9084f362dd963b44f9cbf5e85b483bd30339"
+    },
+    {
+      "id": "diagnosis_primary",
+      "artifact": "table_ii.json",
+      "sha256": "0497bda9b9b4c9c39410b8d228b40a164182d2584e1585806c717fe47f323133"
+    },
+    {
+      "id": "diagnosis_threshold",
+      "artifact": "table_iv.json",
+      "sha256": "96ac6b6ee07ad2a0038d3de4510d77852112c16ba24c5a30f4f56f67e87d600d"
+    },
+    {
+      "id": "baseline_threshold",
+      "artifact": "threshold_metrics.csv",
+      "sha256": "7bad66ca2d85446fba5b3c4136a3337ff33eed38036a9df55429d26ee06af01b"
+    },
+    {
+      "id": "budget",
+      "artifact": "summary.csv",
+      "sha256": "88861a7eba1d484d7fc05e169b36be05e9e12437d3f88d2a947f0e0f9f518171"
+    },
+    {
+      "id": "auxiliary",
+      "artifact": "per_method.csv",
+      "sha256": "5ceed29ee07025ec427dc7d64ec60e48b46873d1b643536966dd860aeb4f64e0"
+    },
+    {
+      "id": "external_base",
+      "artifact": "table1.json",
+      "sha256": "ce76bbf00ce839be8e404b4a2beee47fb08293ef953bf6c69ee196ac5c5c2e35"
+    },
+    {
+      "id": "external_paired",
+      "artifact": "table3_external.json",
+      "sha256": "437f8729e51a4d41bc681b869ba7d3939d586fc46ebec833586ad9bbcd9d7a62"
+    }
+  ],
+  "transformations": [
+    "Allowlisted aggregate columns only; no patient-level fields",
+    "Legacy predicted-minus-observed sign reversed for public Q",
+    "Diagnosis joint-supervision reference appended to original nine encoders",
+    "Exact two-sided permutation p-values recomputed for 10 and 9 encoders"
+  ],
+  "uncertainty": {
+    "primary": "point estimates; no complete ten-model CI set released here",
+    "budget": "pointwise 95% Monte Carlo mean intervals across valid selection repetitions",
+    "auxiliary_survival": "patient-bootstrap 95% intervals conditional on fitted models",
+    "external_auxiliary": "paired training-seed mean 95% intervals; n=5, fixed evaluation cohorts"
+  }
+}

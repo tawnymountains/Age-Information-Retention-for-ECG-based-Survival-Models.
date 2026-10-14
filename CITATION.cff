@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Please cite this software release; article metadata will be updated when available."
+type: software
+title: "Toward Reliable ECG-based Survival Models: Evaluating Age-Information Retention — Public Reference Package"
+version: 0.2.0
+date-released: '2026-10-14'
+license: MIT
+repository-code: 'https://github.com/tawnymountains/ecg-age-retention'
+authors:
+  - family-names: Zhao
+    given-names: Zijian
+    orcid: 'https://orcid.org/0009-0007-9554-1676'
+  - family-names: Lin
+    given-names: Zihuai
+    orcid: 'https://orcid.org/0000-0002-3299-0411'
+  - family-names: Pang
+    given-names: Gaoyang
+    orcid: 'https://orcid.org/0000-0002-0948-4641'
+  - family-names: Vucetic
+    given-names: Branka
+    orcid: 'https://orcid.org/0000-0002-2700-2001'
+keywords:
+  - ECG
+  - survival analysis
+  - age-information retention
+  - subgroup calibration
+  - encoder selection

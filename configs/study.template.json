@@ -1,0 +1,17 @@
+{
+  "purpose": "USER-SUPPLIED configuration template, NOT the exact paper training recipe",
+  "representation_dimension": 256,
+  "survival_pca_components": 32,
+  "older_age_threshold": 75,
+  "code_horizon_years": 5,
+  "mimic_horizon_days": 90,
+  "ridge_alpha_grid": null,
+  "cox_penalty": null,
+  "cox_max_iter": null,
+  "cox_tolerance": null,
+  "encoder_training_config": null,
+  "auxiliary_age_weight": null,
+  "training_seeds": null,
+  "patient_split_manifest": null,
+  "note": "Null fields are intentionally unpublished. The synthetic demo uses explicitly illustrative settings. No clinical data or checkpoints are included."
+}
